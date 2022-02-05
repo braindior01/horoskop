@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .cek {
+        border-bottom: solid black;
+        width: 500px;
+    }
+    
+</style>
+<body>
+    <div class="cek">
+        <h1><strong>Program Horoskop</strong></h1>
+        <input type="submit" id="Klik" value="Click here!">
+        <p>Keberuntungan Anda hari ini:</p>
+    </div>
+    <div id="hasil"></div>
+
+    <script>
+        const klik = document.getElementById('Klik');
+        klik.addEventListener('click', function() {
+            let randomNumber = Math.floor(Math.random()*3)+1;
+            console.log(randomNumber);
+            function horoskop (randomNumber) {
+                if (randomNumber === 1) {
+                    return "Hebat!!";
+                } else if (randomNumber === 2) {
+                    return "Boleh juga!";
+                } else {
+                    return "Mengerikan";
+                }
+
+            }
+
+           const hasil = document.getElementById('hasil');
+           const newLine = document.createElement('p');
+           newLine.innerHTML = horoskop(randomNumber);
+           hasil.append(newLine);
+
+        });
+    </script>
+</body>
+</html>
